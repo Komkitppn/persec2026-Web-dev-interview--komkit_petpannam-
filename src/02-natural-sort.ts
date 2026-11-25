@@ -13,7 +13,6 @@ const tests: [string[], string[]][] = [
 for (const [input, expected] of tests) {
   const result = sortCodes(input);
   const ok = JSON.stringify(result) === JSON.stringify(expected);
-  if (ok) 
   console.log(`${ok ? "PASS" : "FAIL"}  ${JSON.stringify(input)} => ${JSON.stringify(result)}`);
 }
 

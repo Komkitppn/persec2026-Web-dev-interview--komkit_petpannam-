@@ -1,2 +1,37 @@
-"# persec2026-Web-dev-interview--komkit-petpannam-" 
-"# persec2026-Web-dev-interview--komkit_petpannam-" 
+# PERSEC 2026 – Web Developer Interview
+
+คำตอบแบบทดสอบ Web Developer เขียนด้วย TypeScript
+
+## วิธีรัน
+
+ต้องใช้ Node.js 22.6 ขึ้นไป ไม่ต้องติดตั้ง package เพิ่ม
+
+```bash
+node --experimental-strip-types src/01-valid-brackets.ts
+```
+
+เปลี่ยนชื่อไฟล์เป็นข้ออื่นได้ตามต้องการ แต่ละไฟล์มีตัวอย่างหรือโค้ดทดสอบอยู่ท้ายไฟล์
+
+## รายการข้อ
+
+| ข้อ | หัวข้อ | ไฟล์ |
+|---|---|---|
+| 1 | ตรวจวงเล็บ `()`, `[]`, `{}` ว่าเปิด-ปิดครบคู่และถูกลำดับ | [src/01-valid-brackets.ts](src/01-valid-brackets.ts) |
+| 2 | เรียงรหัสแบบ natural sort (`TH2` มาก่อน `TH10`) | [src/02-natural-sort.ts](src/02-natural-sort.ts) |
+| 3 | Autocomplete เรียงผลตาม ขึ้นต้น → ตรงกลาง → ท้ายคำ | [src/03-autocomplete.ts](src/03-autocomplete.ts) |
+| 4 | แปลงเลข ⇄ เลขโรมัน | [src/04-roman-numerals.ts](src/04-roman-numerals.ts) |
+| 5 | เรียงหลักของตัวเลขแต่ละตัวจากมากไปน้อย (`3008` → `8300`) | [src/05-sort-digits.ts](src/05-sort-digits.ts) |
+| 6 | Tribonacci | [src/06-tribonacci.ts](src/06-tribonacci.ts) |
+
+## หมายเหตุ / การตีความโจทย์
+
+- **ข้อ 1:** ใช้ stack เก็บวงเล็บเปิด เจอวงเล็บปิดต้องตรงกับตัวบนสุดของ stack
+- **ข้อ 3:** คำที่อยู่กลุ่มเดียวกันเรียงตามลำดับเดิมใน input
+- **ข้อ 4:** รองรับ 1 – 3999 ตามมาตรฐานเลขโรมัน และรับตัวพิมพ์เล็กได้ input ที่ไม่ถูกต้อง เช่น `0`, `4000`, `"IIII"`, `"IC"` จะ throw error
+- **ข้อ 5:** ข้ามค่าที่ไม่ใช่จำนวนเต็มบวก
+- **ข้อ 6:** ตัวอย่าง `[2, 3, 1, 6, 9, 16]` ในโจทย์น่าจะพิมพ์ผิด เพราะ 3 + 1 + 6 = 10 ผลที่ถูกคือ `[2, 3, 1, 6, 10, 17]`
+- **ข้อ 6:** ถ้าค่าเริ่มต้นมีไม่ถึง 3 ตัว ตัวที่ขาดนับเป็น 0
+
+## Prompts
+
+prompt ที่ใช้กับ AI ในข้อ 4 และ 6 อยู่ในโฟลเดอร์ [prompts/](prompts/)
